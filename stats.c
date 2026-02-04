@@ -39,34 +39,82 @@ void main() {
 
   /* Other Variable Declarations Go Here */
   /* Statistics and Printing Functions Go Here */
+  sort_array(test, SIZE);
+  print_statistics(test, SIZE);
+  print_array(test, SIZE);
 
 }
 
 /* Add other Implementation File Code Here */
 void print_statistics(unsigned char * array, unsigned int size){
-
+  unsigned char max = find_maximum(array, size);
+  unsigned char min = find_minimum(array, size);
+  unsigned char mean = find_mean(array, size);
+  unsigned char median = find_median(array, size);
+  
+  printf("Maximum: %hhu\n Minimum: %hhu\n Mean: %hhu\n Median: %hhu\n", max, min, mean, median);
 } 
 
 void print_array(unsigned char * array, unsigned int size) {
-
+  for(int i = 0; i < size; i++){
+    printf("%hhu ", array[i]);
+  }
 }
 
 unsigned char find_median(unsigned char * array, unsigned int size) {
-
+  if(size % 2 == 0) {
+    int median = ((array[size/2] + array[(size/2) - 1])/2);
+    return (char) median;
+  } else {
+    int median = array[size/2];
+    return (char) median;
+  }
 }
 
 unsigned char find_mean(unsigned char * array, unsigned int size) {
+  int sum = 0;
+  for(int i = 0; i < size; i++) {
+    sum += array[i];
+  }
+  int mean = sum/size;
 
+  return (char) mean;  
 }
 
 unsigned char find_maximum(unsigned char * array, unsigned int size) {
+  int i = 0;
+  unsigned char max = array[0];
+  while(i < size) {
+    if(array[i] > max) {
+      max = array[i];
+    }
+    i++;
+  }
 
+  return max;
 }
 
 unsigned char find_minimum(unsigned char * array, unsigned int size) {
+  int i = 0;
+  unsigned char min = array[0];
+  while(i < size) {
+    if(array[i] < min) {
+      min = array[i];
+    }
+    i++;
+  }
 
+  return min;
 }
 
 void sort_array(unsigned char * array, unsigned int size) {
-
+  for (int i = 0; i < size - 1; i++) {
+    for(int j = i + 1; j < size; j++) {
+      if(array[j] > array[i]) {
+        unsigned char temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+      }
+    }
+  }
 } 
