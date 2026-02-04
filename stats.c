@@ -9,13 +9,15 @@
  *
  *****************************************************************************/
 /**
- * @file <Add File Name> 
- * @brief <Add Brief Description Here >
+ * @file stats.c 
+ * @brief Calculates the statistics of an array of unsigned char data items
  *
- * <Add Extended Description Here>
+ * This file calculates the stastics of 
+ * an array of unsigned char data items 
+ * and prints the results.
  *
- * @author <Add FirsName LastName>
- * @date <Add date >
+ * @author Tobi
+ * @date 30/01/2026
  *
  */
 
@@ -41,3 +43,30 @@ void main() {
 }
 
 /* Add other Implementation File Code Here */
+void print_statistics(unsigned char * array, unsigned int size){
+
+} 
+
+void print_array(unsigned char * array, unsigned int size) {
+
+}
+
+unsigned char find_median(unsigned char * array, unsigned int size) {
+
+}
+
+unsigned char find_mean(unsigned char * array, unsigned int size) {
+
+}
+
+unsigned char find_maximum(unsigned char * array, unsigned int size) {
+
+}
+
+unsigned char find_minimum(unsigned char * array, unsigned int size) {
+
+}
+
+void sort_array(unsigned char * array, unsigned int size) {
+
+} 
